@@ -1,0 +1,158 @@
+================================================================================
+COMPREHENSIVE COMPARISON: WACHTER VS GLANCE
+================================================================================
+
+1. OVERALL METRICS
+--------------------------------------------------------------------------------
+Metric                         Wachter              GLANCE              
+--------------------------------------------------------------------------------
+Validity Rate                  52.20%               37.40%              
+Avg Distance (L2)              0.3894               0.4796              
+Avg Sparsity                   4.60%                0.00%               
+Avg Features Changed           12.40                13.00               
+Convergence Rate               100.00%              100.00%             
+
+2. STATISTICAL SIGNIFICANCE TESTS
+--------------------------------------------------------------------------------
+
+Distance (L2):
+  Wachter mean: 0.3894
+  GLANCE mean:  0.4796
+  t-statistic:  -7.1831
+  p-value:      0.000000
+  Significant:  YES
+
+Sparsity:
+  Wachter mean: 0.0460
+  GLANCE mean:  0.0000
+  t-statistic:  20.6424
+  p-value:      0.000000
+  Significant:  YES
+
+Validity:
+  Wachter rate: 52.20%
+  GLANCE rate:  37.40%
+  Chi-square:   43.6906
+  p-value:      0.000000
+  Significant:  YES
+
+3. FAIRNESS ANALYSIS (SEX)
+--------------------------------------------------------------------------------
+
+Demographic Parity Difference:
+  Wachter: 38.00%
+  GLANCE:  36.00%
+
+Wachter Statistical Test (Female vs Male):
+  Test: chi_square
+  Statistic: 143.1612
+  p-value: 0.000000
+  Significant: YES (a=0.05)
+  Gap estimate: 38.00%
+  95% CI: [32.27%, 43.73%]
+
+GLANCE Statistical Test (Female vs Male):
+  Test: chi_square
+  Statistic: 136.8548
+  p-value: 0.000000
+  Significant: YES (a=0.05)
+  Gap estimate: 36.00%
+  95% CI: [30.43%, 41.57%]
+
+Cost Disparity (Distance):
+  Wachter: 0.1057
+  GLANCE:  0.0277
+
+Per-Group Analysis:
+
+  Female:
+    Count: 500
+    Wachter validity: 33.20%
+    GLANCE validity:  19.40%
+    Wachter distance: 0.8170
+    GLANCE distance:  0.5262
+
+  Male:
+    Count: 500
+    Wachter validity: 71.20%
+    GLANCE validity:  55.40%
+    Wachter distance: 0.7113
+    GLANCE distance:  0.4985
+
+4. KEY FINDINGS
+--------------------------------------------------------------------------------
+
+- Validity: Wachter achieves 14.8% higher validity rate (statistically significant)
+- Proximity: Wachter generates counterfactuals 0.0902 closer to originals (statistically significant)
+- Fairness: GLANCE shows 2.0% better demographic parity
+- Cost Disparity: GLANCE has lower distance disparity across protected groups
+
+5. GLANCE GLOBAL RULES
+--------------------------------------------------------------------------------
+
+Number of rules discovered: 2
+
+Rule usage distribution:
+  Rule 0: 106 instances (10.6%)
+  Rule 4: 894 instances (89.4%)
+
+6. FACTS FAIRNESS EVALUATION
+--------------------------------------------------------------------------------
+
+FACTS (Fairness-Aware Counterfactuals for Subgroups) evaluates fairness
+across 4 dimensions: Equal Burden, Equal Effectiveness, Equal Choice,
+and Equal Cost of Effectiveness.
+
+Wachter Method:
+----------------------------------------
+  Equal Burden (Cost Similarity):
+    Female: 0.8170
+    Male: 0.7113
+    Disparity: 0.1057
+
+  Equal Effectiveness (Success Rate Parity):
+    Female: 33.20%
+    Male: 71.20%
+    Gap: 38.00%
+    p-value: 0.000000 (significant)
+
+  Equal Choice (Option Availability):
+    Female: 33.20%
+    Male: 71.20%
+    Disparity: 38.00%
+
+  Equal Cost of Effectiveness (Cost at 80% target):
+    Female: N/A (target not achievable)
+    Male: N/A (target not achievable)
+    Disparity: 0.0000
+
+
+GLANCE Method:
+----------------------------------------
+  Equal Burden (Cost Similarity):
+    Female: 0.5262
+    Male: 0.4985
+    Disparity: 0.0277
+
+  Equal Effectiveness (Success Rate Parity):
+    Female: 19.40%
+    Male: 55.40%
+    Gap: 36.00%
+    p-value: 0.000000 (significant)
+
+  Equal Choice (Option Availability):
+    Female: 19.40%
+    Male: 55.40%
+    Disparity: 36.00%
+    Rule Diversity:
+      Female: 2 unique rules
+      Male: 2 unique rules
+
+  Equal Cost of Effectiveness (Cost at 80% target):
+    Female: N/A (target not achievable)
+    Male: N/A (target not achievable)
+    Disparity: 0.0000
+
+================================================================================
+END OF REPORT
+================================================================================

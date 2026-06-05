@@ -1,0 +1,85 @@
+{
+  "project": "Counterfactual_Project (Adult Dataset)",
+  "wachter_metrics": {
+    "n_samples": 1000,
+    "validity_rate": 0.0,
+    "avg_distance": 0.011483760340345296,
+    "std_distance": 0.1207459273885996,
+    "avg_sparsity": 0.9989230769230769,
+    "avg_num_changes": 0.014,
+    "convergence_rate": 0.999,
+    "avg_iterations": 20.887,
+    "group_metrics": {
+      "Female": {
+        "count": 500,
+        "validity": 0.0,
+        "distance": NaN,
+        "sparsity": 0.9990769230769231
+      },
+      "Male": {
+        "count": 500,
+        "validity": 0.0,
+        "distance": NaN,
+        "sparsity": 0.9987692307692307
+      }
+    }
+  },
+  "glance_metrics": {
+    "n_samples": 1000,
+    "validity_rate": 0.204,
+    "avg_distance": 1.5760234258898154,
+    "std_distance": 2.2093159237770887e-16,
+    "avg_sparsity": 0.9230769230769232,
+    "avg_num_changes": 1.0,
+    "convergence_rate": 1.0,
+    "avg_iterations": 1.0,
+    "group_metrics": {
+      "Female": {
+        "count": 500,
+        "validity": 0.068,
+        "distance": 1.5760234258898156,
+        "sparsity": 0.9230769230769232
+      },
+      "Male": {
+        "count": 500,
+        "validity": 0.34,
+        "distance": 1.5760234258898156,
+        "sparsity": 0.9230769230769232
+      }
+    },
+    "rule_usage": {
+      "0": 1000
+    }
+  },
+  "stats_results": {
+    "distance": {
+      "wachter_mean": 0.011483760340345296,
+      "glance_mean": 1.5760234258898154,
+      "t_statistic": -409.54047615496347,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "sparsity": {
+      "wachter_mean": 0.9989230769230769,
+      "glance_mean": 0.9230769230769232,
+      "t_statistic": 265.25109397916276,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "validity": {
+      "wachter_rate": 0.0,
+      "glance_rate": 0.204,
+      "chi2_statistic": 224.94977946635223,
+      "p_value": 7.529457447830699e-51,
+      "significant": true
+    }
+  },
+  "fairness_summary": {
+    "wachter_dp_diff": 0.0,
+    "glance_dp_diff": 0.272,
+    "wachter_cost_disparity": 0,
+    "glance_cost_disparity": 0.0,
+    "wachter_statistical_tests": null,
+    "glance_statistical_tests": null
+  }
+}

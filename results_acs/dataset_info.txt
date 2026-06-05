@@ -1,0 +1,11 @@
+ACS Dataset Information
+================================================================================
+Train samples: 125225
+Val samples: 31307
+Test samples: 39133
+Features: 10
+Feature names: ['AGEP', 'COW', 'SCHL', 'MAR', 'OCCP', 'POBP', 'RELP', 'WKHP', 'SEX', 'RAC1P']
+
+Protected attributes: SEX, RAC1P
+SEX encoding: 1=Male, 2=Female
+RAC1P encoding: 1=White, 2=Black, 3-9=Other

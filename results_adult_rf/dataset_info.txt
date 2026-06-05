@@ -1,0 +1,13 @@
+Adult (UCI) Dataset Information (Random Forest run)
+================================================================================
+Train samples: 24129
+Val samples:   6033
+Test samples:  15060
+Features:      13
+Feature names: ['age', 'workclass', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
+
+Protected attributes: sex, race
+Target: income (>50K = 1, <=50K = 0)
+
+Classifier: RandomForestClassifier
+  n_estimators=100, max_depth=10, random_state=42

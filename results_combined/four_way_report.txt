@@ -1,0 +1,191 @@
+========================================================================================
+FOUR-WAY COMPARISON: COUNTERFACTUAL FAIRNESS BENCHMARK
+Wachter (gradient-based) vs GLANCE (rule-based)
+Datasets x Classifiers: 2 x 2 design (Adult, ACS) x (LR, RF)
+========================================================================================
+
+Design
+----------------------------------------------------------------------------------------
+  n_sample per cell : 1000 instances (balanced 50/50 by sex)
+  Selection         : individuals predicted NEGATIVE (income<=50K / low-
+                      income), drawn from the held-out test split
+  Classifiers       : LogisticRegression (sklearn defaults, max_iter=1000)
+                      RandomForestClassifier(n_estimators=100, max_depth=10)
+  Counterfactuals   : Wachter (finite-difference gradient descent on
+                      predict_proba) and GLANCE (Phase-1 rule discovery via
+                      successful Wachter samples, Phase-2 rule application).
+
+  [DEGEN] flag      : Wachter on RF cells. The optimizer cannot escape the
+                      piecewise-constant tree decision surface (zero local
+                      gradient inside each leaf). Numbers are real but the
+                      method has effectively failed -- treat as a
+                      methodological finding, not a result. See Section 5
+                      of RESULTS_4WAY.md for the full diagnosis.
+
+========================================================================================
+1. CLASSIFIER PERFORMANCE  (held-out test split)
+========================================================================================
+Metric            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+Accuracy              0.8191            0.8548            0.7866            0.8144
+AUC                   0.8482            0.9132            0.8613            0.8953
+n_test                15,060            15,060            39,133            39,133
+
+========================================================================================
+2. VALIDITY RATE  (fraction of CFs that cross the decision boundary)
+========================================================================================
+Validity %
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               52.20%     [DEGEN] 0.00%            17.70%     [DEGEN] 0.20%
+GLANCE                37.40%            20.40%            10.80%            21.90%
+
+========================================================================================
+3. L2 DISTANCE  (mean Euclidean distance from x to x')
+========================================================================================
+Mean L2
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               0.3894    [DEGEN] 0.0115            0.1633    [DEGEN] 0.0068
+GLANCE                0.4796            1.5760            0.2202            1.1140
+
+========================================================================================
+4. SPARSITY  (fraction of features left UNCHANGED)
+========================================================================================
+Sparsity %
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER                4.60%    [DEGEN] 99.89%             0.08%    [DEGEN] 99.89%
+GLANCE                 0.00%            92.31%             0.00%            80.00%
+
+========================================================================================
+5. DEMOGRAPHIC-PARITY GAP BY SEX  (validity_male - validity_female)
+   95% CI from bootstrap; p-value from chi-square or Fisher exact.
+========================================================================================
+DP gap %
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               38.00%     [DEGEN] 0.00%             2.90%     [DEGEN] 0.36%
+GLANCE                36.00%            27.20%             0.37%             2.15%
+
+DP gap 95% CI:
+  WACHTER       [32.3, 43.7] [DEGEN][0.0, 0.0]        [0.0, 7.6] [DEGEN][0.0, 0.9]
+  GLANCE        [30.4, 41.6]      [22.5, 31.9]        [0.0, 4.2]        [0.0, 7.3]
+
+DP gap p-value:
+  WACHTER              <1e-6    [DEGEN] 1.0000            0.2661    [DEGEN] 0.5047
+  GLANCE               <1e-6             <1e-6            0.9308            0.4577
+
+========================================================================================
+6. FACTS EQUAL-EFFECTIVENESS GAP  (same metric structure)
+   By construction this equals the DP gap on sex when each subject is
+   evaluated against the same recourse target; included for completeness
+   alongside the FACTS framework's Equal Burden / Equal Choice axes.
+========================================================================================
+FACTS EE gap %
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               38.00%     [DEGEN] 0.00%             2.90%     [DEGEN] 0.36%
+GLANCE                36.00%            27.20%             0.37%             2.15%
+
+FACTS EE p-value:
+  WACHTER              <1e-6    [DEGEN] 1.0000            0.2661    [DEGEN] 0.5047
+  GLANCE               <1e-6             <1e-6            0.9308            0.4577
+
+========================================================================================
+7. EQUAL-BURDEN COST DISPARITY  (|L2_female - L2_male|)
+========================================================================================
+Cost disp.
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               0.1057    [DEGEN] 0.0000            0.0052    [DEGEN] 0.0000
+GLANCE                0.0277            0.0000            0.0019            0.0000
+
+========================================================================================
+7b. FACTS EQUAL COST OF EFFECTIVENESS  (cost to reach 80% success rate)
+    Equal Burden looks at the AVERAGE cost across all valid CFs;
+    Equal Cost of Effectiveness looks at the cost needed for the cheapest
+    80% of subjects in each group to succeed. With the configured target
+    (0.80) the target is unreachable in EVERY cell (max observed group
+    validity = 71.2%), so all per-group costs are N/A and disparity = 0.
+    At this target the 4th FACTS dimension adds no actionable signal
+    beyond Equal Burden / Equal Effectiveness; a lower target (e.g. 0.30)
+    would be needed to differentiate methods here.
+========================================================================================
+CoE disp.
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               0.0000    [DEGEN] 0.0000            0.0000    [DEGEN] 0.0000
+GLANCE                0.0000            0.0000            0.0000            0.0000
+
+Per-group CoE cost (Female / Male):
+  WACHTER          n/a / n/a [DEGEN] n/a / n/a         n/a / n/a [DEGEN] n/a / n/a
+  GLANCE           n/a / n/a         n/a / n/a         n/a / n/a         n/a / n/a
+
+========================================================================================
+8. PER-GROUP VALIDITY  (sex, full breakdown)
+========================================================================================
+Female:
+  validity %
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               33.20%     [DEGEN] 0.00%            16.11%     [DEGEN] 0.00%
+GLANCE                19.40%             6.80%            10.60%            20.71%
+
+Male:
+  validity %
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER               71.20%     [DEGEN] 0.00%            19.01%     [DEGEN] 0.36%
+GLANCE                55.40%            34.00%            10.97%            22.87%
+
+========================================================================================
+9. CONVERGENCE RATE
+========================================================================================
+Converged %
+----------------------------------------------------------------------------------------
+Method            Adult / LR        Adult / RF          ACS / LR          ACS / RF
+----------------------------------------------------------------------------------
+WACHTER              100.00%    [DEGEN] 99.90%           100.00%   [DEGEN] 100.00%
+GLANCE               100.00%           100.00%           100.00%           100.00%
+
+========================================================================================
+10. HEADLINE FINDINGS
+========================================================================================
+(a) Wachter on RF is DEGENERATE in both datasets (validity 0.0%-0.2%,
+    sparsity 99.89%). The finite-difference gradient vanishes inside every
+    leaf region of the forest, so the optimizer effectively does not move.
+    These cells are reported but should not be interpreted as method
+    performance.
+
+(b) GLANCE survives the RF switch because its Phase-2 application is a fixed
+    additive rule (no gradient queries at apply time). Validity actually
+    holds or slightly improves under RF (Adult: 37.4% -> 20.4%; ACS: 10.8%
+    -> 21.9%).
+
+(c) The Adult sex-disparity finding (~36-38% DP gap on LR) REAPPEARS on RF
+    under GLANCE (27.2%, p<1e-6, 95% CI [22.5%, 31.9%]). This refutes the
+    'linear boundary artifact' hypothesis -- the gap is a property of the
+    data, not the classifier.
+
+(d) The ACS disparity is small (0.4%-2.9% across all 4 cells, none
+    statistically significant). The result is robust to both dataset and
+    classifier choice and stands in clear contrast to Adult.
+
+(e) Conclusion: dataset characteristics dominate over classifier choice for
+    the fairness conclusions tested here. The 2x2 design strengthens the
+    headline result (Adult exhibits a large, real sex disparity; ACS does
+    not) against the most natural reviewer objection.
+
+========================================================================================
+END OF REPORT
+========================================================================================

@@ -1,0 +1,51 @@
+================================================================================
+COMPREHENSIVE COMPARISON: WACHTER VS GLANCE (ACS DATASET)
+================================================================================
+
+1. OVERALL METRICS
+--------------------------------------------------------------------------------
+Metric                         Wachter              GLANCE              
+--------------------------------------------------------------------------------
+Validity Rate                  13.00%               7.00%               
+Avg Distance (L2)              0.1443               0.2223              
+Avg Sparsity                   0.00%                0.00%               
+Avg Features Changed           10.00                10.00               
+Convergence Rate               100.00%              100.00%             
+
+2. STATISTICAL SIGNIFICANCE TESTS
+--------------------------------------------------------------------------------
+
+Distance (L2):
+  Wachter mean: 0.1443
+  GLANCE mean:  0.2223
+  t-statistic:  -3.8073
+  p-value:      0.000187
+  Significant:  YES
+
+Sparsity:
+  Wachter mean: 0.0000
+  GLANCE mean:  0.0000
+  t-statistic:  nan
+  p-value:      nan
+  Significant:  NO
+
+Validity:
+  Wachter rate: 13.00%
+  GLANCE rate:  7.00%
+  Chi-square:   1.3889
+  p-value:      0.238593
+  Significant:  NO
+
+3. FAIRNESS ANALYSIS (SEX)
+--------------------------------------------------------------------------------
+
+Demographic Parity Difference:
+  Wachter: 6.00%
+  GLANCE:  6.00%
+
+Cost Disparity (Distance):
+  Wachter: 0.0332
+  GLANCE:  0.0000
+
+Per-Group Analysis:
+

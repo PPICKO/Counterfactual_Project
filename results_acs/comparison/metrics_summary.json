@@ -1,0 +1,109 @@
+{
+  "project": "Counterfactual_Project_new_dataset (ACS Dataset)",
+  "wachter_metrics": {
+    "n_samples": 100,
+    "validity_rate": 0.13,
+    "avg_distance": 0.14426428186266935,
+    "std_distance": 0.20395241031061714,
+    "avg_sparsity": 0.0,
+    "avg_num_changes": 10.0,
+    "convergence_rate": 1.0,
+    "avg_iterations": 46.3,
+    "group_metrics": {
+      "1.0": {
+        "count": 50,
+        "validity": 0.16,
+        "distance": 0.12867279463004033,
+        "sparsity": 0.0
+      },
+      "2.0": {
+        "count": 50,
+        "validity": 0.1,
+        "distance": 0.15985576909529833,
+        "sparsity": 0.0
+      }
+    }
+  },
+  "glance_metrics": {
+    "n_samples": 100,
+    "validity_rate": 0.07,
+    "avg_distance": 0.22230605758648486,
+    "std_distance": 6.515174285795789e-17,
+    "avg_sparsity": 0.0,
+    "avg_num_changes": 10.0,
+    "convergence_rate": 1.0,
+    "avg_iterations": 1.0,
+    "group_metrics": {
+      "1.0": {
+        "count": 50,
+        "validity": 0.1,
+        "distance": 0.2223060575864848,
+        "sparsity": 0.0
+      },
+      "2.0": {
+        "count": 50,
+        "validity": 0.04,
+        "distance": 0.2223060575864848,
+        "sparsity": 0.0
+      }
+    },
+    "rule_usage": {
+      "2": 100
+    }
+  },
+  "stats_results": {
+    "distance": {
+      "wachter_mean": 0.14426428186266935,
+      "glance_mean": 0.22230605758648486,
+      "t_statistic": -3.807289469951735,
+      "p_value": 0.00018730565047384766,
+      "significant": "True"
+    },
+    "sparsity": {
+      "wachter_mean": 0.0,
+      "glance_mean": 0.0,
+      "t_statistic": NaN,
+      "p_value": NaN,
+      "significant": "False"
+    },
+    "validity": {
+      "wachter_rate": 0.13,
+      "glance_rate": 0.07,
+      "chi2_statistic": 1.3888888888888888,
+      "p_value": 0.2385928293164321,
+      "significant": "False"
+    }
+  },
+  "fairness_summary": {
+    "wachter_dp_diff": 0.06,
+    "glance_dp_diff": 0.060000000000000005,
+    "wachter_cost_disparity": 0.033221658970091106,
+    "glance_cost_disparity": 2.7755575615628914e-17,
+    "wachter_statistical_tests": {
+      "test_type": "chi_square",
+      "statistic": 0.3536693191865605,
+      "p_value": 0.5520433309144819,
+      "significant": "False",
+      "group1": "1.0",
+      "group2": "2.0",
+      "gap_estimate": 0.06,
+      "gap_ci_95": [
+        0,
+        0.19130537231964273
+      ]
+    },
+    "glance_statistical_tests": {
+      "test_type": "fisher_exact",
+      "statistic": 2.6666666666666665,
+      "p_value": 0.43603150331310936,
+      "significant": "False",
+      "group1": "1.0",
+      "group2": "2.0",
+      "gap_estimate": 0.060000000000000005,
+      "gap_ci_95": [
+        0,
+        0.15932385816106823
+      ]
+    }
+  }
+}

@@ -1,0 +1,222 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Data files (large, should be downloaded)
+data/
+src/data/
+
+# Results (can be regenerated)
+results_acs/wachter/*.pkl
+results_acs/glance/*.pkl
+results_acs/*.pkl
+results_acs_rf/wachter/*.pkl
+results_acs_rf/glance/*.pkl
+results_acs_rf/*.pkl
+results_adult/wachter/*.pkl
+results_adult/glance/*.pkl
+results_adult/*.pkl
+results_adult_rf/wachter/*.pkl
+results_adult_rf/glance/*.pkl
+results_adult_rf/*.pkl
+results/wachter/*.pkl
+results/glance/*.pkl
+
+# Keep comparison results for reference
+!results_acs/comparison/
+!results_acs_rf/comparison/
+!results_adult/comparison/
+!results_adult_rf/comparison/
+!results_combined/
+
+# Model files
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+
+# But keep example results (text/json reports + figures)
+!results_acs/comparison/*.json
+!results_acs/comparison/*.txt
+!results_acs_rf/comparison/*.json
+!results_acs_rf/comparison/*.txt
+!results_adult/comparison/*.json
+!results_adult/comparison/*.txt
+!results_adult_rf/comparison/*.json
+!results_adult_rf/comparison/*.txt
+
+# Local-only folder (paper, slides, docs — not for GitHub)
+no_to_git/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+nul
+*.lnk
+
+# Office temp files
+~$*
+*.~*
+
+# Log files
+*.log
+logs/
+
+# Secrets and credentials
+*.pem
+*.key
+credentials.json
+secrets.json
+.env.local
+.env.*.local
+
+# Claude Code
+.claude/
