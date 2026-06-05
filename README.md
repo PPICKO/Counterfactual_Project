@@ -201,18 +201,27 @@ Evaluates counterfactual fairness across 4 dimensions:
 
 ## References
 
-1. Wachter, S., Mittelstadt, B., & Russell, C. (2017). *Counterfactual Explanations without Opening the Black Box*. arXiv:1711.00399. https://arxiv.org/abs/1711.00399
-2. Kavouras, L., et al. (2024). *GLANCE: Global Actions in a Nutshell for Counterfactual Explainability*. arXiv:2405.18921. https://arxiv.org/abs/2405.18921
-3. Kavouras, L., et al. (2023). *FACTS: Fairness-Aware Counterfactuals for Subgroups*. arXiv:2306.14978. https://arxiv.org/abs/2306.14978
-4. Ding, F., et al. (2021). *Retiring Adult: New Datasets for Fair Machine Learning*. NeurIPS Datasets and Benchmarks. https://proceedings.neurips.cc/
-5. Mothilal, R. K., Sharma, A., & Tan, C. (2020). *Explaining Machine Learning Classifiers through Diverse Counterfactual Explanations*. Proceedings of the AAAI Conference on Artificial Intelligence, 34(01), 607–614.
-6. Verma, S., Dickerson, J., & Hines, K. (2020). *Counterfactual Explanations for Machine Learning: A Review*. arXiv:2010.10596. https://arxiv.org/abs/2010.10596
-7. Molnar, C. (2022). *Interpretable Machine Learning* (2nd ed.). https://christophm.github.io/interpretable-ml-book/
-8. Guidotti, R., Monreale, A., Ruggieri, S., Turini, F., Giannotti, F., & Pedreschi, D. (2018). *A Survey of Methods for Explaining Black Box Models*. ACM Computing Surveys, 51(5), 1–42.
-9. Doshi-Velez, F., & Kim, B. (2017). *Towards a Rigorous Science of Interpretable Machine Learning*. arXiv:1702.08608. https://arxiv.org/abs/1702.08608
-10. Ding, F.; Hardt, M.; Miller, J.; and Schmidt, L. 2021. Retiring Adult: New Datasets for Fair Machine Learning. NeurIPS.
-https://doi.org/10.48550/arXiv.2108.04884
-11. Mitchell, S.; et al. 2021. Algorithmic Fairness: Choices, Assumptions, and Definitions. Annual Review of Statistics. https://arxiv.org/pdf/2605.09852
+1. Wachter, S., Mittelstadt, B., & Russell, C. (2017). *Counterfactual Explanations without Opening the Black Box*. arXiv:1711.00399.
+
+2. Guidotti, R. (2022). *Counterfactual Explanations and How to Find Them*. Data Mining and Knowledge Discovery.
+
+3. Kavouras, L., et al. (2024). *GLANCE: Global Actions in a Nutshell for Counterfactual Explainability*. arXiv:2405.18921.
+
+4. Ustun, B., Spangher, A., & Liu, Y. (2019). *Actionable Recourse in Linear Classification*. ACM Conference on Fairness, Accountability, and Transparency (FAccT).
+
+5. Mothilal, R. K., Sharma, A., & Tan, C. (2020). *Explaining Machine Learning Classifiers through Diverse Counterfactual Explanations*. ACM Conference on Fairness, Accountability, and Transparency (FAccT).
+
+6. Karimi, A. H., Barthe, G., Schölkopf, B., & Valera, I. (2021). *A Survey of Algorithmic Recourse*. arXiv:2010.04050.
+
+7. Barocas, S., Hardt, M., & Narayanan, A. (2019). *Fairness and Machine Learning*. Available at fairmlbook.org.
+
+8. Dua, D., & Graff, C. (2017). *UCI Machine Learning Repository*. University of California, Irvine.
+
+9. Kavouras, L., Sacharidis, D., Arvanitidis, G., & Palpanas, T. (2023). *FACTS: Fairness-Aware Counterfactuals for Subgroups*. arXiv:2306.14978.
+
+10. Ding, F., Hardt, M., Miller, J., & Schmidt, L. (2021). *Retiring Adult: New Datasets for Fair Machine Learning*. Advances in Neural Information Processing Systems (NeurIPS).
+
+11. Mitchell, S., et al. (2021). *Algorithmic Fairness: Choices, Assumptions, and Definitions*. Annual Review of Statistics and Its Application.
 
 
 ## License
