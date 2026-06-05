@@ -141,7 +141,7 @@ loader = ACSDataLoader(data_dir="data")
 dataset = loader.load_processed_data(states=["CA"])
 
 # Train any sklearn-compatible classifier (LR or RF)
-model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42, n_jobs=-1)
+model = RandomForestClassifier(n_estimators=1000, max_depth=10, random_state=42, n_jobs=-1)
 model.fit(dataset["X_train"], dataset["y_train"])
 
 # Generate counterfactuals (Wachter uses finite-difference gradients on any predict_proba)
