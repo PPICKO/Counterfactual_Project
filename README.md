@@ -80,7 +80,7 @@ Counterfactual_Project/
 ### Setup
 
 ```bash
-git clone https://github.com/<your-username>/Counterfactual_Project.git
+git clone https://github.com/PPICKO/Counterfactual_Project.git
 cd Counterfactual_Project
 
 python -m venv venv
@@ -141,7 +141,7 @@ loader = ACSDataLoader(data_dir="data")
 dataset = loader.load_processed_data(states=["CA"])
 
 # Train any sklearn-compatible classifier (LR or RF)
-model = RandomForestClassifier(n_estimators=1000, max_depth=10, random_state=42, n_jobs=-1)
+model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42, n_jobs=-1)
 model.fit(dataset["X_train"], dataset["y_train"])
 
 # Generate counterfactuals (Wachter uses finite-difference gradients on any predict_proba)
@@ -192,7 +192,7 @@ Evaluates counterfactual fairness across 4 dimensions:
 
 ```bibtex
 @article{counterfactual_fairness_2026,
-  title={Dataset Transferability and Classifier Robustness in Counterfactual Fairness: A 2×2 Benchmark of Adult and ACS under Logistic Regression and Random Forest},
+  title={Dataset Transferability in Counterfactual Fairness: Comparing Adult (1994) and ACS (2018) Benchmarks},
   author={Pinto Ickowicz, Priscila and El Bekkaoui, Souhayla},
   journal={INFO-H512 Course Project, Universit\'{e} Libre de Bruxelles},
   year={2026}
