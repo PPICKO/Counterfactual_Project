@@ -50,7 +50,7 @@ Counterfactual_Project/
 ├── run_adult_glance_rf_only.py      # Recovery script: GLANCE-only on saved RF classifier
 ├── analyze_decision_boundary.py     # Decision boundary analysis
 ├── generate_cross_dataset_plots.py  # Adult vs ACS cross-dataset plots
-├── results/                         # n=100 Adult baseline (preserved for reference)
+├── results/                         # n=1000 Adult baseline (preserved for reference)
 ├── results_acs/comparison/          # ACS + LR reports + figures
 ├── results_adult/comparison/        # Adult + LR reports + figures
 ├── results_acs_rf/comparison/       # ACS + RF reports + figures
