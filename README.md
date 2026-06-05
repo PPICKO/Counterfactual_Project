@@ -193,7 +193,7 @@ Evaluates counterfactual fairness across 4 dimensions:
 ```bibtex
 @article{counterfactual_fairness_2026,
   title={Dataset Transferability and Classifier Robustness in Counterfactual Fairness: A 2×2 Benchmark of Adult and ACS under Logistic Regression and Random Forest},
-  author={Pinto Ickowicz, Priscila and Halit, Walcim and El Bekkaoui, Souhayla},
+  author={Pinto Ickowicz, Priscila and El Bekkaoui, Souhayla},
   journal={INFO-H512 Course Project, Universit\'{e} Libre de Bruxelles},
   year={2026}
 }
